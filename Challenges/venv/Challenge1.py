@@ -18,17 +18,5 @@ class Challenge1(unittest.TestCase):
         self.assertIn("Google", self.driver.title)
 
 
-    def test_challenge2(self):
-        self.driver.get("https://www.copart.com")
-
-        self.searchfield = self.driver.find_element(By.ID, "input-search")
-        self.searchfield.click()
-        self.searchfield.send_keys('Porsche')
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(By.CSS_SELECTOR, 'btn btn-lightblue'))
-        #self.driver.find_element(By.CSS_SELECTOR, 'btn btn-lightblue').click()
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
