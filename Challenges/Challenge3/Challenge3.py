@@ -16,24 +16,57 @@ class Challenge3(unittest.TestCase):
 
     def test_challenge3forloop(self):
         self.driver.get("https://www.copart.com")
-        elements = self.driver.find_elements(By.XPATH, "") #add xpath for popular searches
+        print("Makes/Models")
+        for x in range(1, 5):
+            oneloop = str(x)
+            for i in range(1, 6):
+                twoloop = str(i)
+                carMake = self.driver.find_element(By.XPATH, '//*[@id=\"tabTrending\"]/div[1]/div[2]/div['+oneloop+']/ul/li['+twoloop+']/a')
+                carLink = carMake.get_attribute("href")
+
+                if x <= 2:
+                    print(carLink[37:] + " - " + carLink)
+                else:
+                    print(carLink[36:] + " - " + carLink)
+
+        print(" ")
+        print(" ")
+
+
 
 
     def test_challenge3whileloop(self):
         self.driver.get("https://www.copart.com")
-        elements = self.driver.find_elements(By.XPATH, "")  # add xpath above 3rd div  ./dive[3]//a
-        #index each of them
+        print("Categories")
+        firstLoop = 1
+
+        while firstLoop < 5:
+            secondLoop = 1
+            aLoop = str(firstLoop)
+            while secondLoop < 6:
+                bLoop = str(secondLoop)
+                searchCategory = self.driver.find_element(By.XPATH, '//*[@id=\"tabTrending\"]/div[3]/div['+aLoop+']/ul/li['+bLoop+']/a')
+                grabbedCat = searchCategory.get_attribute("href")
+
+                searchtag = self.driver.find_element(By.CSS_SELECTOR, '#tabTrending > div:nth-child(4) > div:nth-child('+aLoop+') > ul > li:nth-child('+bLoop+') > a')
+                taggrab = searchtag.get_attribute("text")
+
+                print(taggrab + " - " + grabbedCat)
+                secondLoop += 1
+
+            firstLoop += 1
+
 
         #find elements
-        relative remove stuff and add / on xpath
-        only want makes and models with for loop
-            popular searches
-        Categories with a while loop
+        #relative remove stuff and add / on xpath
+        #only want makes and models with for loop
+        #    popular searches
+        #Categories with a while loop
 
-        how to grab HREF, get attribute
+        #how to grab HREF, get attribute
 
-        screen contatenation
-        xrchiang@gmail.com personal email
+        #screen contatenation
+        #xrchiang@gmail.com personal email
 
 
 
