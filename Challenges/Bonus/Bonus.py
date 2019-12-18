@@ -26,20 +26,20 @@ class Bonus(unittest.TestCase):
             i += 1
 
 
-    # def test_bonus2(self):
-    #     self.driver.get("https://www.sling.com/search")
-    #     self.assertIn("Sling", self.driver.title)
-    #     element = self.driver.find_element(By.XPATH, '//*[@aria-label=\"input for search\"]')
-    #     element.click()
-    #     element.send_keys("racer")
-    #     other = self.driver.find_element(By.XPATH, '//*[@id=\"searchWrapper\"]/div[2]')
-    #     other.submit()
-    #
-    #     # From class
-    #     html = self.driver.page_source
-    #     # print(html)
-    #     self.assertIn("Results", html)
-    #     print("Assert 2")
+    def test_bonus2(self):
+        self.driver.get("https://www.sling.com/search")
+        self.assertIn("Sling", self.driver.title)
+        element = self.driver.find_element(By.XPATH, '//*[@aria-label=\"input for search\"]')
+        element.click()
+        element.send_keys("Speed Racer")
+        element.send_keys(Keys.RETURN)
+        #other = self.driver.find_element(By.XPATH, '//*[@id=\"searchWrapper\"]/div[contains(@class,\'sc-isojaI joJasG\']' )
+        #othersubmit()
+
+        html = self.driver.page_source
+        #print(html)
+        self.assertIn("Speed Racer", html)
+
 
 if __name__ == '__main__':
     unittest.main()
