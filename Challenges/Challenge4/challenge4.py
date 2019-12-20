@@ -1,10 +1,12 @@
 import unittest
 from Fibonacci import *
-class Challenge4(unittest.TestCase)
+from ConvertToString import *
 
-def test_challenge4(self):
-    print(Fibonacci(9))
-    print(convertToString(123123))
+class Challenge4(unittest.TestCase):
+
+    def test_challenge4fibonacci(self):
+        print(Fibonacci(9))
+        print(ConvertToString(123123))
 
 
 if __name__ == '__main__':
@@ -13,24 +15,6 @@ if __name__ == '__main__':
 
 
 
-
-    # Driver Program
-
-
-print(Fibonacci(9))
-
-need arra/list
-if number == 0
-    print("zero")
-else
-
-
-# zertotoTwenty = ["", "one", "two", "three", ..."nineteen"]
-# print (zertotoTwenty[3])  #will get three
-# tens = ["", "twenty", "thirty"]
-#
-# partialnumber = number[4:6] => 456
-# partialnumberHundreds = number[0:3]
 
 #Premise of challenge 4
 #

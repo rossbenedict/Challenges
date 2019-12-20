@@ -27,7 +27,7 @@ class Bonus(unittest.TestCase):
 
 
     def test_bonus2(self):
-        self.driver.get("https://www.sling.com/search")
+        self.driver.get("https://help.sling.com/")
         self.assertIn("Sling", self.driver.title)
         element = self.driver.find_element(By.XPATH, '//*[@aria-label=\"input for search\"]')
         element.click()
