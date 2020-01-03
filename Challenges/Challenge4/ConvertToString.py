@@ -2,33 +2,32 @@ def ConvertToString(number):
     print(number)
 
     ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
-    teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eightteen",
+    teens = ["", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eightteen",
              "nineteen"]
-    tens = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+    tens = ["", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
     hundreds = ["hundred"]
     thousands = ["thousand"]
+    nextNumber = []
+
 
     stringedNumber = str(number)
-    lengthNumber = len(stringedNumber)
-    stringedLengthNumber = str(lengthNumber)
-    print("lengthNumber = " + stringedLengthNumber)
 
-    newNumber = stringedNumber
-    print("after string =" + newNumber)
-    newNumber.split()
-    print(newNumber[0])
-    beta = " "
+    numberList = list(stringedNumber)
 
-    for i in range(0,lengthNumber):
-        alpha = newNumber[i]
-        #beta = beta + alpha
-        beta = beta + ones[i]
+    for i in range(0, len(stringedNumber)):
+        nextNumber.append(ones[int(numberList[i])])
 
-        i += 1
+    tenthNumber = int(numberList[5])
+    if tenthNumber == 1:
+        teenNumber = int(nextNumber[6])
+        nextNumber.insert(tenthNumber, teens[teenNumber])
+        nextNumber.pop(7)
+        nextNumber.pop(6)
+    elif int(tenthNumber) > 1:
+        nextNumber.insert(tenthNumber, tens[tenthNumber])
+        nextNumber.pop(6)
 
-    print(beta)
-
-    print(anotherNumber)
+    finalNumber = nextNumber
 
     #mod function (%) gives the remainder
     #recursive functions
