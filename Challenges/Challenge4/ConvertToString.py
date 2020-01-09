@@ -8,56 +8,32 @@ def ConvertToString(number):
     hundreds = ["hundred"]
     thousands = ["thousand"]
     nextNumber = []
-
+    #finalNumber = []
 
     stringedNumber = str(number)
 
     numberList = list(stringedNumber)
 
-    for i in range(0, len(stringedNumber)):
-        nextNumber.append(ones[int(numberList[i])])
+    a=0
+    for i in numberList:
+        juman = numberList[a]
+        print(juman)
+        juman = int(juman)
+        newNumber = ones[juman]
+        nextNumber.append(newNumber)
+        a = a+1
 
-    tenthNumber = int(numberList[5])
-    if tenthNumber == 1:
-        teenNumber = int(nextNumber[6])
-        nextNumber.insert(tenthNumber, teens[teenNumber])
-        nextNumber.pop(7)
-        nextNumber.pop(6)
-    elif int(tenthNumber) > 1:
-        nextNumber.insert(tenthNumber, tens[tenthNumber])
-        nextNumber.pop(6)
+    nextNumber.insert(1, hundreds[0])
+    nextNumber.insert(2, thousands[0])
+    nextNumber.insert(5, thousands[0])
+    nextNumber.insert(7, hundreds[0])
+    nextNumber.insert(8, tens[int(numberList[4])])
+    nextNumber.pop(9)
+    nextNumber.pop(3)
 
-    finalNumber = nextNumber
-
-    #mod function (%) gives the remainder
-    #recursive functions
-
-    return ConvertToString(finalNumber)
-
-    #number = 123456
-
-    #partialnumber = number[4:6] = > 456
-    #partialnumberHundreds = number[0:3]
-
-
-    #getNum(number)
+    print(nextNumber)
 
 
 
-#def getNum(smallNumber):
+    return ConvertToString(nextNumber)
 
-
-    #need a return to send the info back
-
-# need arra/list
-# if number == 0
-#     print("zero")
-# else
-
-
-# zertotoTwenty = ["", "one", "two", "three", ..."nineteen"]
-# print (zertotoTwenty[3])  #will get three
-# tens = ["", "twenty", "thirty"]
-#
-# partialnumber = number[4:6] => 456
-# partialnumberHundreds = number[0:3]
