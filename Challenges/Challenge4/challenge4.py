@@ -6,7 +6,7 @@ from SplitWord import *
 class Challenge4(unittest.TestCase):
 
     def test_challenge4fibonacci(self):
-        #print(Fibonacci(9))
+        print(Fibonacci(9))
         print(ConvertToString(103123))
 
 
