@@ -1,4 +1,5 @@
 #import from chalenge 2
+from selenium.webdriver.common.by import By
 
 class TopNavSearch:
     def __init__(self, driver):

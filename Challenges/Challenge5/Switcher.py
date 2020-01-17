@@ -1,0 +1,2 @@
+def monday():
+    print("Monday")
